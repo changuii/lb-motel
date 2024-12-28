@@ -1,8 +1,18 @@
 import React, {useEffect, useState} from "react";
+import RoomInfoCard, {RoomInfoProps} from "../components/RoomInfoCard.tsx";
 
 
 const RoomInfo: React.FC = () => {
     const [isAppearance, setIsAppearance] = useState(false);
+
+    const roomInfos: RoomInfoProps[] = [
+        {roomName: '스탠다드', image: '/standard-room.jpeg'},
+        {roomName: '특실', image: '/special-room.jpeg'},
+        {roomName: '스파', image: '/spa.jpeg'},
+        {roomName: '온돌', image: '/ondol-room.jpeg'},
+        {roomName: '트윈', image: '/twin-room.jpeg'}
+    ]
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -41,29 +51,14 @@ const RoomInfo: React.FC = () => {
     }, []);
 
     return (
-        <div className={`transition - all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'}`} >
-            <div className='flex-col flex justify-start items-center mt-10 gap-16'>
-                <div className='font-bold text-4xl text-black mb-5'>LB의 객실 정보</div>
-                <div className='box transition-all duration-1000 rounded-3xl w-1/2 shadow-2xl flex flex-col items-center justify-start p-6'>
-                    <div className='text-3xl font-bold text-black mb-5'>스탠다드</div>
-                    <img src='/standard-room.jpeg' className='rounded-2xl shadow-2xl w-5/6'/>
-                </div>
-                <div className='box transition-all duration-1000 rounded-3xl w-1/2 shadow-2xl flex flex-col items-center justify-start p-6'>
-                    <div className='text-3xl font-bold text-black mb-5'>특실</div>
-                    <img src='/special-room.jpeg' className='rounded-2xl shadow-2xl w-5/6'/>
-                </div>
-                <div className='box transition-all duration-1000 rounded-3xl w-1/2 shadow-2xl flex flex-col items-center justify-start p-6'>
-                    <div className='text-3xl font-bold text-black mb-5'>스파</div>
-                    <img src='/spa.jpeg' className='rounded-2xl shadow-2xl w-5/6'/>
-                </div>
-                <div className='box transition-all duration-1000 rounded-3xl w-1/2 shadow-2xl flex flex-col items-center justify-start p-6'>
-                    <div className='text-3xl font-bold text-black mb-5'>온돌</div>
-                    <img src='/ondol-room.jpeg' className='rounded-2xl shadow-2xl w-5/6'/>
-                </div>
-                <div className='box transition-all duration-1000 rounded-3xl w-1/2 shadow-2xl flex flex-col items-center justify-start p-6'>
-                    <div className='text-3xl font-bold text-black mb-5'>트윈</div>
-                    <img src='/twin-room.jpeg' className='rounded-2xl shadow-2xl w-5/6'/>
-                </div>
+        <div className={`transition - all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'}`}>
+            <div className='flex-col flex justify-start items-center mt-10 gap-6 lg:gap-16'>
+                <div className='font-bold text-2xl lg:text-4xl text-black mb-2 lg:mb-5'>LB의 객실 정보</div>
+                {
+                    roomInfos.map((roomInfo) => (
+                        <RoomInfoCard {...roomInfo}/>
+                    ))
+                }
             </div>
         </div>
     )
