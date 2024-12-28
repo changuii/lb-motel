@@ -24,20 +24,26 @@ const Header: React.FC = () => {
                 <div></div>
                 <div
                     onClick={() => handleNavigate('/')}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl cursor-pointer"
+                    className="absolute top-1/2 left-[20%] lg:left-1/2 transform -translate-x-1/2 lg:text-3xl -translate-y-1/2 text-2xl cursor-pointer"
                 >
                     LB Motel
                 </div>
-                <div className='flex justify-around items-center w-4/12'>
+                <div className='flex justify-around items-center w-8/12 lg:w-1/3 text-xs lg:text-xl'>
                     <div onClick={() => handleNavigate('/directions')}
-                         className='cursor-pointer'
+                         className='cursor-pointer m-1 lg:m-5 break-words text-center'
                     > 오시는 길
                     </div>
-                    <div onClick={() => handleNavigate('/services')} className='cursor-pointer'>제공 서비스</div>
-                    <div onClick={() => handleNavigate('/rooms')} className='cursor-pointer'>객실 정보</div>
+                    <div onClick={() => handleNavigate('/services')}
+                         className='cursor-pointer m-1 lg:m-5 break-words text-center'
+                    >제공 서비스
+                    </div>
+                    <div onClick={() => handleNavigate('/rooms')}
+                         className='cursor-pointer m-1 lg:m-5 break-words text-center'
+                    >객실 정보
+                    </div>
                     <div
                         onClick={() => handleNavigate('/reservation')}
-                        className='cursor-pointer'
+                        className='cursor-pointer m-1 lg:m-5'
                     > 예약
                     </div>
                 </div>

@@ -39,7 +39,7 @@ const Main: React.FC = () => {
 
             {/* 화면 중앙에 글씨를 배치 */}
             <div className="h-full absolute top-0 w-full flex justify-center items-center">
-                <div className="text-6xl text-white font-bold ">
+                <div className="text-3xl lg:text-6xl text-center text-white font-bold ">
                     <div className={`transition-all duration-1000 ${animate ? 'opacity-100 -translate-y-4' : 'opacity-0'} `}>
                         {currentText}
                     </div>
