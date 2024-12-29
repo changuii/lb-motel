@@ -1,6 +1,5 @@
 import Background from "../components/Background.tsx";
 import React, {useEffect, useState} from "react";
-import Header from "../components/Header.tsx";
 
 
 const Main: React.FC = () => {
