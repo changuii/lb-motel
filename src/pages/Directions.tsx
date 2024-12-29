@@ -9,10 +9,12 @@ const Directions: React.FC = () => {
             zoom: 19
         });
 
-        var marker = new naver.maps.Marker({
+        const marker = new naver.maps.Marker({
             position: new naver.maps.LatLng(36.240510, 128.301045),
             map: map
         });
+
+        marker.setMap(map);
 
         setTimeout(() => {
             setIsAppearance(true);
