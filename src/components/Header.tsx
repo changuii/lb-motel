@@ -17,10 +17,10 @@ const Header: React.FC = () => {
     }, [])
 
     return (
-        <div className='flex w-full'>
-            <header
-                className={`w-full h-16 bg-white shadow-xl flex justify-between items-center font-bold text-black z-50 
+        <header
+            className={`w-full h-[10%] font-bold text-white z-50 
              transition-all duration-1000 ${isAppearance ? 'opacity-100 translate-y-0' : 'opacity-0'}`}>
+            <div className='flex h-full justify-between items-center'>
                 <div></div>
                 <div
                     onClick={() => handleNavigate('/')}
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
                     > 예약
                     </div>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }
 

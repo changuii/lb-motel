@@ -51,16 +51,20 @@ const RoomInfo: React.FC = () => {
     }, []);
 
     return (
-        <div className={`transition - all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'}`}>
-            <div className='flex-col flex justify-start items-center mt-10 gap-6 lg:gap-16'>
-                <div className='font-bold text-2xl lg:text-4xl text-black mb-2 lg:mb-5'>LB의 객실 정보</div>
-                {
-                    roomInfos.map((roomInfo) => (
-                        <RoomInfoCard {...roomInfo}/>
-                    ))
-                }
+        <>
+            <div className='h-[10%] bg-black w-full absolute top-0 z-[-1]'>
             </div>
-        </div>
+            <div className={`transition - all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'} mb-20`}>
+                <div className='flex-col flex justify-start items-center mt-10 gap-6 lg:gap-16'>
+                    <div className='font-bold text-2xl lg:text-4xl text-black mb-2 lg:mb-5'>LB의 객실 정보</div>
+                    {
+                        roomInfos.map((roomInfo) => (
+                            <RoomInfoCard {...roomInfo}/>
+                        ))
+                    }
+                </div>
+            </div>
+        </>
     )
 }
 

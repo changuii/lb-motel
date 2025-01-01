@@ -68,28 +68,33 @@ const Services: React.FC = () => {
 
 
     return (
-        <div className={`transition-all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'}`}>
-            <div className='flex flex-col justify-center items-center m-10'>
-                <div className='font-bold text-4xl text-black mb-10'>LB의 제공 서비스</div>
-                <div className='bg-black rounded-full w-56 h-56 lg:w-80 lg:h-80 mb-20 justify-center flex'>
-                    <img src='/front.jpg' className='w-full rounded-full shadow-2xl'/>
-                </div>
-
-                <div className='grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-16 lg:ml-20 lg:mr-20'>
-                    {
-                        rightServices.map((service: CardProps) => (
-                            <Card {...service} />
-                        ))
-                    }
-                    {
-                        leftServices.map((service: CardProps) => (
-                            <Card {...service} />
-                        ))
-                    }
-                </div>
+        <>
+            <div className='h-[10%] bg-black w-full absolute top-0 z-[-1]'>
             </div>
 
-        </div>
+            <div className={`transition-all duration-1000 ${isAppearance ? 'opacity-100' : 'opacity-0'} mb-20`}>
+                <div className='flex flex-col justify-center items-center m-10'>
+                    <div className='font-bold text-4xl text-black mb-10'>LB의 제공 서비스</div>
+                    <div className='bg-black rounded-full w-56 h-56 lg:w-80 lg:h-80 mb-20 justify-center flex'>
+                        <img src='/front.jpg' className='w-full rounded-full shadow-2xl'/>
+                    </div>
+
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-16 lg:ml-20 lg:mr-20'>
+                        {
+                            rightServices.map((service: CardProps) => (
+                                <Card {...service} />
+                            ))
+                        }
+                        {
+                            leftServices.map((service: CardProps) => (
+                                <Card {...service} />
+                            ))
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </>
     )
 }
 
